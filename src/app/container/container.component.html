@@ -15,7 +15,11 @@
     <!-- @for (name of names; track $index) {
         <p>Name: {{name}}</p>
     } -->
-    <product-list [searchText]="searchText"></product-list>
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    
+    @if (productListComponent.selectedProduct) {
+        <product-detail [productListComp]="productListComponent"></product-detail>
+    }
 </div>
 
 
