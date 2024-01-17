@@ -1,0 +1,22 @@
+<div class="ekart--product--container">
+
+    <!-- <img [src]="product.pImage" alt="">
+    <p>Name: {{product.name}}</p>
+    <p>Price: Rs.{{product.price}}</p>
+    <p>Color: {{product.color}}</p>
+    <p>Dicounted price: Rs.{{getDiscountedPrice().toFixed(2)}}</p>
+    <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' items left':'Out of Stock'}}</p>
+    <button (click)="decrement()">-</button>
+    <span>{{addToCart}}</span>
+    <button (click)="increment()">+</button>
+    <p>Customer Name: {{name}}</p>
+    <input type="text" [value]="name" (input)="onNameChange($event)" [attr.aria-hidden]="true"> -->
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+    <!-- @for (name of names; track $index) {
+        <p>Name: {{name}}</p>
+    } -->
+    <product-list [searchText]="searchText"></product-list>
+</div>
+
+
+<!-- disabled, hidden, checked - string interpolation will not work -->

@@ -1,0 +1,14 @@
+<div class="ekart--search--product">
+    <input 
+        class="ekart-search-product-input" #searchIP>
+    <button class="btn btn-search" (click)="updateSearchText(searchIP)">
+        Search
+    </button>
+</div>
+<div class="ekart-search-result-for">
+    @if (searchText.length > 0) {
+        <p><strong>Search result for:</strong> {{ searchText }}</p>
+    }
+</div>
+
+<!-- falsy values: false, '', null, undefined, 0 -->

@@ -1,0 +1,21 @@
+<app-filter 
+    [all]="totalProductCount" 
+    [inStock]="totalProductInStock" 
+    [outOfStock]="totalProductOutOfStock"
+    (selectedFilterRadioButtonChanged)="onFilterChanged($event)">
+</app-filter>
+<!-- <p>{{''}}</p> -->
+<div class="ekart--products--container">
+    @for (product of products; track $index) {
+        <!-- @if (selectedFilterRadioButton === "all") {
+            <app-product [product]="product"></app-product>
+        } @else if (product.is_in_inventory.toString() === selectedFilterRadioButton) {
+            <app-product [product]="product"></app-product>
+        } -->
+        @if (searchText === '') {
+            <app-product [product]="product"></app-product>
+        } @else if (product.name.toLowerCase().includes(searchText)) {
+            <app-product [product]="product"></app-product>
+        }
+    }
+</div>
